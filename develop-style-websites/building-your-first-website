@@ -1,1 +1,56 @@
+What was before the internet? 
+How did we find knowlege?
+When did the web become the central source of information? 
+Why are websites built of HTML and CSS, the two most dominent computer languages? 
+
+What are HTML & CSS?
+
+HTML, HyperText Markup Language is used to give structure and meaing?
+CSS, Casacading Style Sheets, is used to style the appearence of content?
+
+Understanding Common HTML terms
+
+Elements are designators used within multiple leves of heading (h1-h6) paragaraphs (<p>) to more 
+<a>, <div>, <span>, <strong> and <em> elements and more.
+
+Tags envelop the content within the elements using opening <div> and closing </div> tags to the elements.
+<a>....</a>
+
+Attributes are properties of an element for instnce <a href="http://shayhowe.com/"> Learning from Shay Howe</a>
+
+Setting Up the HTML Document Structure
+Working with Visual Studio Code & Sublime Code to edit my code. 
+All HTML have a <!DOCTYPE html> <html>, <head> and <body>
+To include metadata that provides information about the HTML document.
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <p>This is a web page.</p>
+  </body>
+</html>
+
+Self-Closing Elements
+Also, known as void elemenst, the <meta> doesnt have a closing tags and encodes the characters for the content..
+Other common selfclosing elements to research:
+<br><embed><img><meta><wbr><input><param><hr><link><source>
+
+Code Validation; ensuring we follow correct linting to write our code.
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Styles Conference</title>
+</head>
+  <body>
+  <h1>Styles Conference</h1>
+  <p>Every year the brightest web designers and front-end developers descend on Chicago to discuss the latest technologies. Join us this August!</p>
+</body>
+</html>
 
