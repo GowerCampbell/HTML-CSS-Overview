@@ -6,13 +6,13 @@ As part of my journey to become a software engineer, I am enrolled in the [100De
 
 This GitHub repository represents the practical application of the knowledge I've gained from both the 100Devs bootcamp and Shay Howe's course. My goal is to build a strong foundation in web development by creating projects that demonstrate my ability to structure web pages with HTML and style them with CSS. This repository is the starting point for my next development arc, where I will continue to refine my skills, explore more complex web development concepts, and contribute to real-world projects.
 
-The 100Devs bootcamp emphasizes not only technical skills but also community and collaboration, with a motto of "Be Kind, or Get The Fuck Out." Inspired by this ethos, I welcome feedback, suggestions, and collaboration from the 100Devs community and beyond as I work to improve my projects and grow as a developer. This repository will evolve as I progress through the bootcamp, incorporating new skills and showcasing my development journey.
+The 100Devs bootcamp emphasizes not only technical skills but also community and collaboration, with a motto of "Be Kind, or Get The Fudge Out." Inspired by this ethos, I welcome feedback, suggestions, and collaboration from the 100Devs community and beyond as I work to improve my projects and grow as a developer. This repository will evolve as I progress through the bootcamp, incorporating new skills and showcasing my development journey.
 
 Thank you for visiting my repository, and I look forward to sharing my progress as I continue to learn and build!
 
 ## Purpose
 This repository serves as:
-- A documentation of my progress through the 100Devs bootcamp, starting with HTML fundamentals from Class 2.
+- A documentation of my progress through the 100Devs bootcamp, starting with HTML & CSS fundamentals from what I learned from HyperionDev.
 - A showcase of practical HTML and CSS projects inspired by Shay Howe's course and personal initiatives.
 - A reference for best practices in web development, applied to 100Devs assignments and real-world projects.
 - A platform for collaboration and feedback from the 100Devs community and other developers.
