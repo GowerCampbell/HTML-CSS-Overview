@@ -11,9 +11,9 @@ This repository serves as a living document of my progress, containing detailed 
 I believe in learning in public and documenting what I learn. Here you can find my structured notes from the foundational courses I am taking:
 
   * **CSS Fundamentals:** Notes from the excellent [Learn Layout](https://learnlayout.com/) tutorial, covering core concepts like the box model, positioning, and Flexbox.
-      * **[View Notes: CSS-Fundamental-Notes.md](https://www.google.com/search?q=./Learn-Layouts/CSS-Fundamental-Notes.md)**
+      * **[View Notes: CSS-Fundamental-Notes.md](Learn-Layouts/CSS-Fundamental-Notes.md)**
   * **Developing Stylish Websites:** My takeaways from Shay Howe's ["Learn to Code HTML & CSS"](https://learn.shayhowe.com/html-css/) course, focusing on the practical steps of building a complete website.
-      * **[View Notes: building-your-first-website.md](https://www.google.com/search?q=./develop-style-websites/building-your-first-website.md)**
+      * **[View Notes: building-your-first-website.md](develop-style-websites/building-your-first-website.md)**
 
 ## Purpose
 This repository serves as:
