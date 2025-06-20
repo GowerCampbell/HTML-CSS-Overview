@@ -2,13 +2,18 @@
 
 ## Introduction to My Web Development Journey
 
-As part of my journey to become a software engineer, I am enrolled in the [100Devs bootcamp](https://100devs.org/), a free, community-driven program designed to equip aspiring developers with the skills needed for a career in software engineering. In the second class of this 30-week bootcamp, I focused on the fundamentals of HTML, learning how to structure content for the web effectively. To further enhance my skills, I am leveraging the comprehensive and beginner-friendly ["Learn to Code HTML & CSS" course by Shay Howe](https://learn.shayhowe.com/html-css/), which provides clear and organized lessons on both HTML and CSS, covering topics from basic semantics to advanced styling techniques like the box model and floats.
+As part of my journey to become a software engineer, I am enrolled in [100Devs](https://100devs.org/), a free, 30-week, community-driven bootcamp designed to equip aspiring developers with the skills for a successful career in the tech industry.
 
-This GitHub repository represents the practical application of the knowledge I've gained from both the 100Devs bootcamp and Shay Howe's course. My goal is to build a strong foundation in web development by creating projects that demonstrate my ability to structure web pages with HTML and style them with CSS. This repository is the starting point for my next development arc, where I will continue to refine my skills, explore more complex web development concepts, and contribute to real-world projects.
+This repository serves as a living document of my progress, containing detailed notes from my studies and the projects I build along the way.
 
-The 100Devs bootcamp emphasizes not only technical skills but also community and collaboration, with a motto of "Be Kind, or Get The Fudge Out." Inspired by this ethos, I welcome feedback, suggestions, and collaboration from the 100Devs community and beyond as I work to improve my projects and grow as a developer. This repository will evolve as I progress through the bootcamp, incorporating new skills and showcasing my development journey.
+### Learning Notes & Resources
 
-Thank you for visiting my repository, and I look forward to sharing my progress as I continue to learn and build!
+I believe in learning in public and documenting what I learn. Here you can find my structured notes from the foundational courses I am taking:
+
+  * **CSS Fundamentals:** Notes from the excellent [Learn Layout](https://learnlayout.com/) tutorial, covering core concepts like the box model, positioning, and Flexbox.
+      * **[View Notes: CSS-Fundamental-Notes.md](https://www.google.com/search?q=./Learn-Layouts/CSS-Fundamental-Notes.md)**
+  * **Developing Stylish Websites:** My takeaways from Shay Howe's ["Learn to Code HTML & CSS"](https://learn.shayhowe.com/html-css/) course, focusing on the practical steps of building a complete website.
+      * **[View Notes: building-your-first-website.md](https://www.google.com/search?q=./develop-style-websites/building-your-first-website.md)**
 
 ## Purpose
 This repository serves as:
