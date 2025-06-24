@@ -90,8 +90,8 @@ Feedback and collaboration are welcome\! In the spirit of the 100Devs community,
 
 ## 🔗 Resources & Tools
 
-\<details\>
-\<summary\>\<strong\>Click to view the full list of learning resources, tools, and inspiration\</strong\>\</summary\>
+<details>
+<summary><strong\>Click to view the full list of learning resources, tools, and inspiration</strong></summary>
 
 ### HTML & CSS Learning
 
@@ -135,7 +135,7 @@ Feedback and collaboration are welcome\! In the spirit of the 100Devs community,
   - [Google Hosted Libraries](https://developers.google.com/speed/libraries/devguide): CDN for common libraries.
   - [Copy Paste Character](http://copypastecharacter.com/): Special characters for web design.
 
-\</details\>
+</details>
 
 ```
 ## Contributions
