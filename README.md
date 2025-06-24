@@ -137,7 +137,7 @@ Feedback and collaboration are welcome\! In the spirit of the 100Devs community,
 
 </details>
 
-```
+
 ## Contributions
 I welcome feedback and collaboration from the 100Devs community and other developers! Please open an issue or submit a pull request for suggestions, bug fixes, or enhancements, especially for accessibility or cross-browser compatibility. Let’s build together, keeping with the 100Devs spirit of kindness and community.
 
