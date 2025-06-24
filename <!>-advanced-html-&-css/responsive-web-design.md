@@ -131,7 +131,9 @@ The 'only' logical operator is a new operator and is 'not' recognized by user ag
 
 Omitting a Media Type you can result to 'all' to default to all.
 
-Media Features in Media Quiriws
+Media Features in Media Quiries
+
+Knowing a mesd
 
 
 
