@@ -26,8 +26,8 @@ I believe in learning in public. Here are my structured notes from the foundatio
   - **[➡️ View Notes: building-your-first-website.md](develop-style-websites/building-your-first-website.md)**
  
 - **Learn Layouts**
-  - Takeaways from Shay Howe's ["Learn to Code HTML & CSS"](https://learn.shayhowe.com/html-css/), focusing on building a complete website from scratch.
-  - **[➡️ View Notes: building-your-first-website.md](develop-style-websites/building-your-first-website.md)**
+    - Takeaways from Shay Howe's ["Learn to Code HTML & CSS"](https://learn.shayhowe.com/html-css/), focusing on building a complete website from scratch.
+    - **[➡️ View Notes: CSS-Fundamental-Notes](Learn-Layouts/CSS-Fundamental-Notes.md)**
 
 ## 🛠️ Core Concepts & Contents
 
