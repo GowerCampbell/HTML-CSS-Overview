@@ -18,16 +18,16 @@ This repository is a living document of my web development education. Its primar
 I believe in learning in public. Here are my structured notes from the foundational courses that have shaped this repository.
 
 - **CSS Fundamentals**
-  - Notes from the [Learn Layout](https://learnlayout.com/) tutorial, covering the box model, positioning, and Flexbox.
-  - **[➡️ View Notes: CSS-Fundamental-Notes.md](Learn-Layouts/CSS-Fundamental-Notes.md)**
+  - Notes from the [Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/) Looking at Media Quries to create flexible, responsive designs.
+  - **[➡️ View Notes: Responsive Web Design.md](HTML-CSS-Overview/<!>-advanced-html-&-css/responsive-web-design.md)**
 
 - **Developing Stylish Websites**
   - Takeaways from Shay Howe's ["Learn to Code HTML & CSS"](https://learn.shayhowe.com/html-css/), focusing on building a complete website from scratch.
   - **[➡️ View Notes: building-your-first-website.md](develop-style-websites/building-your-first-website.md)**
  
 - **Learn Layouts**
-    -  ["Learning Layouts"](https://learnlayout.com/), focusing on building the structure behind HTML for websites.
-    - **[➡️ View Notes: HTML Layout-Notes](Learn-Layouts/CSS-Fundamental-Notes.md)**
+    -  ["Learning Layouts"](https://learnlayout.com/),tutorial, covering the box model, positioning, and Flexbox.
+    - **[➡️ View Notes: HTML Layout-Notes](HTML-CSS-Overview/Learn-Layouts/Learn-Layout-Notes.md)**
 
 ## 🛠️ Core Concepts & Contents
 
