@@ -1,145 +1,329 @@
-Responsive Web Design
-Building a websites for all users, usuage of mobile internet surpasses desktop internet usage for the the growth.
+# Responsive Web Design
 
-Responsive Overview: https://alistapart.com/article/responsive-web-design/
-Credited to Ethan Marcotte
-"Buiding a foundation to define its fame and shape facade, creative decisions quite literally shape a digital space"
+Building websites for all users. Mobile internet usage has surpassed desktop usage, driving the growth of responsive design.
 
-Ensuring a consistent windows and screen resolutios, with user preferences and user installed fonts but the landscape is
-changing from a flexible foundation.
+## Responsive Overview
 
-"I love programming because I can bring stuff into existance "
+[Read more here](https://alistapart.com/article/responsive-web-design/) — credited to Ethan Marcotte.
 
-Responsive Vs Adaptive Vs. Mobile
+> "Building a foundation to define its fame and shape its facade, creative decisions quite literally shape a digital space."
 
-Responsive: Means to create declarations that effect and react to any change ased on factors like the viewport width 
-Adaptive: Modified for a new purpose or a situation buiult to a group of preset factors.
+Ensuring consistent windows and screen resolutions, user preferences, and user-installed fonts — but the landscape is changing from a flexible foundation.
 
-Using a combination provide a perfect formula for functional websites.
+> "I love programming because I can bring stuff into existence."
 
-Mobile: Building a seperate website accessible only to the domain of mobile users, coming with the dependencies of a new code base.
+---
 
-Overall, a responsive web design favoring design that dynamically adapts to different browser and device viewports
+## Responsive vs Adaptive vs Mobile
 
-Flexible Layouts
-Components: Media Queries: Flexible Media: 
-Flexible Layouts: Using grids that are able to dynamically resizing to any width and built using 
-relative length units most commonly percentages or em units. This relaive lengths are then used to declare 
-property balues such as width, margin or padding. 
+### Responsive
 
-CSS3 introduced new relative new units 
-wv: viewports width
-vh: viewports height
-vmin:  Minimum of the viewports height & width
-vmax: Mximum of the viewports height and width
+Create declarations that react to changes in factors like viewport width.
 
-Ofc Flexible layouts do not advocate the use of fized mesurements such as pixeks or inches.
-Reason being viewport chnges from device and devuce for layouts.
+### Adaptive
 
-Identifying the proportions of a flexible layout use relative values 
-by tading the width of an element and then dividing by the width of its parent element.
+Modified for a new purpose or situation, built to fit a set of predefined factors.
+
+### Mobile
+
+Building a separate website, accessible only to mobile users. Comes with dependencies of a new code base.
+
+---
+
+## Flexible Layouts
+
+### Components
+
+- **Media Queries**
+- **Flexible Media**
+
+### Flexible Layouts
+
+Use grids that dynamically resize to any width, built using relative length units (percentages or `em`). These relative lengths are then used to declare properties such as width, margin, or padding.
+
+CSS3 introduced new relative units:
+
+- `vw`: viewport width
+- `vh`: viewport height
+- `vmin`: minimum of the viewport's height and width
+- `vmax`: maximum of the viewport's height and width
+
+Flexible layouts do not use fixed measurements (e.g., pixels or inches), as viewport sizes vary.
+
+#### Proportion Formula
+
+```
 
 target ÷ context = result
 
-Flexible Grid
-Uisng it within a two column layout wrapping both the section and aside elements.
+````
 
-HTML
+### Example Flexible Grid
+
+```html
 <div class="container">
-<section>...</section>
-<aside>...</aside>
+  <section>...</section>
+  <aside>...</aside>
 </div>
+````
 
-CSS
+```css
 .container {
-width: 538px;
+  width: 538px;
 }
 
 section, aside {
-margin: 10px;
+  margin: 10px;
 }
 
 section {
-float: left;
-width: 350px;
+  float: left;
+  width: 350px;
 }
 
 aside {
-float: right;
-width: 158px;
+  float: right;
+  width: 158px;
 }
+```
 
-Taking all fixed units of length and turn them into relative units.
+Converted to relative units:
 
-section, side {
-mrgin: 1.858%; /* 10px ÷ 538px = .0185*/
+```css
+section, aside {
+  margin: 1.858%; /* 10px ÷ 538px = 0.01858 */
 }
 
 section {
-float: left;
-width: 63.197%; /* 340px ÷538px = .6319 */
+  float: left;
+  width: 63.197%; /* 340px ÷ 538px = 0.63197 */
 }
 
 aside {
-float: right;
-width: 29.36%; ?* 158px ÷ 538px = .2936
+  float: right;
+  width: 29.36%; /* 158px ÷ 538px = 0.2936 */
+}
+```
 
-Taking the flexible layout concept, formula and reapplying it to all parts of a grid will create a dynamic website, scaling to every viewport size. 
-Leverage the use of the min-width, max-width, min-height & max-height
+---
 
-But it isnt enough, at times the width of a browser viewport scaling the layout to create columns that display content.
+## Media Queries
 
-Media Queries
-Built with extensions to different media types that we can target when included in our styling, allowing us to specfify the different styles for individual browser and device circumstance with the width of the viewport or device orientation. Link: https://css-tricks.com/css-media-queries/
+Media queries target different devices or browser states by specifying styles depending on viewport width, device orientation, etc.
 
-Intializing Media Quries 
-Used inside the existing stylesheet we add additional HTTP requests
+[CSS Tricks Guide](https://css-tricks.com/css-media-queries/)
 
-HTML
-<link href="href.css" rel="stylesheet" media="all and (max-width: 1024px)">
+### Initializing Media Queries
 
-Much like the decoration we apply a 
+HTML:
 
-CSS
-/* @media Rule */
-@media all and (max-width: 1024px) {...}
+```html
+<link href="style.css" rel="stylesheet" media="all and (max-width: 1024px)">
+```
 
-/* @import Rule */
-@import url(styes.css) all and (max-width: 1024px) {...}
+CSS:
 
-Each media query has a media type followed by one or more expressions 
-Media Types: all, screen, print, tv and braille. 
-Theres even 3d-glasses added to the list but the default is screen.
+```css
+@media all and (max-width: 1024px) { ... }
 
-What follows are the features and values that are rules for that particular device of viewing in
-my selectors that use properties that assign adabtive features in blocks of decorations from the casacade.
+@import url(styles.css) all and (max-width: 1024px);
+```
 
+#### Media Types
 
-Logical Operators in Media Quries
-Available within the @ and, not and only....
-The 'and' Logical operator allow extra contition to be added tmaking sure the browser or device that uses a, b, c and so forth. Acting as unspoken 'or' operator
+* all (default)
+* screen
+* print
+* tv
+* braille
+* (others, including 3d-glasses)
 
-@media all and (min-width: 800px) and (max-width: 1024px) {...}
+#### Logical Operators
 
-The 'not' logical operator negates the query that is identified. In this case the expression below nages the color added to screen.
+* `and`
+* `not`
+* `only`
 
-@media not screen and (color) {...}
+Examples:
 
-The 'only' logical operator is a new operator and is 'not' recognized by user agents thus hiding stlyes from decices or browsers that dont support the media quries. Below expression selects only screens in portrait orintation that have a user agent capabale of rending query
+```css
+@media all and (min-width: 800px) and (max-width: 1024px) { ... }
 
-@media only screen and (orientation: portrait) {...}
+@media not screen and (color) { ... }
 
-Omitting a Media Type you can result to 'all' to default to all.
+@media only screen and (orientation: portrait) { ... }
+```
 
-Media Features in Media Quiries
+---
 
-Knowing a mesd
+## Media Features
 
+### Height & Width
 
+```css
+@media all and (min-width: 320px) and (max-width: 780px) { ... }
+```
 
+### Orientation
 
+```css
+@media all and (orientation: landscape) { ... }
+```
 
+### Aspect Ratio
 
+```css
+@media all and (min-device-aspect-ratio: 16/9) { ... }
+```
 
+### Pixel Ratio
 
+```css
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3) { ... }
+```
 
+### Resolution
+
+```css
+@media print and (min-resolution: 300dpi) { ... }
+```
+
+### Color and Grid
+
+* `color`
+* `color-index`
+* `monochrome`
+* `grid`
+
+**Note:** Media queries are not supported in IE8 and below. Use polyfills like `respond.js` or `CSS3-MediaQueries.js` for support.
+
+---
+
+## Media Queries Demo
+
+```css
+@media all and (max-width: 420px) {
+  section, aside {
+    float: none;
+    width: auto;
+  }
+}
+```
+
+---
+
+## Identifying Breakpoints
+
+Common breakpoints:
+
+* 320px
+* 480px
+* 768px
+* 1024px
+* 1224px
+
+---
+
+## Mobile First
+
+Use smaller viewports by default and progressively enhance for larger screens.
+
+```css
+@media screen and (min-width: 400px)  { ... }
+@media screen and (min-width: 600px)  { ... }
+@media screen and (min-width: 1000px) { ... }
+@media screen and (min-width: 1400px) { ... }
+```
+
+---
+
+## Example: Mobile First Demo
+
+```css
+section,
+aside {
+  margin: 1.8587%;
+}
+
+@media all and (min-width: 420px) {
+  .container {
+    max-width: 538px;
+  }
+  section {
+    float: left;
+    width: 63.197%;
+  }
+  aside {
+    float: right;
+    width: 29.368%;
+  }
+}
+```
+
+---
+
+## Viewport
+
+### Meta Tag
+
+```html
+<meta name="viewport" content="width=device-width">
+```
+
+### Scale Control
+
+```html
+<meta name="viewport" content="initial-scale=2">
+<meta name="viewport" content="minimum-scale=0">
+<meta name="viewport" content="user-scalable=yes">
+<meta name="viewport" content="target-densitydpi=device-dpi">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+---
+
+## CSS Viewport Rule
+
+```css
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+```
+
+---
+
+## Flexible Media
+
+```css
+img, video, canvas {
+  max-width: 100%;
+}
+```
+
+### Flexible Embedded Media
+
+```css
+figure {
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+  width: 100%;
+}
+
+iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+```
+
+---
+
+## Conclusion
+
+A fully responsive approach ensures your website scales and adapts to all screen sizes, devices, and orientations while maintaining usability and aesthetic quality.
+
+```
