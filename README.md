@@ -18,7 +18,7 @@ This repository is a living document of my web development education. Its primar
 I believe in learning in public. Here are my structured notes from the foundational courses that have shaped this repository.
 
 - **CSS Fundamentals**
-  - Notes from the [Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/) Looking at Media Quries to create flexible, responsive designs.
+  - Notes from the [Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/) reading about Media Quries to create flexible, responsive designs.
   - **[➡️ View Notes: Responsive Web Design.md]([<!>-advanced-html-&-css/responsive-web-design.md)**
 
 - **Developing Stylish Websites**
