@@ -267,10 +267,20 @@ li {
  border-top: 1px solid #3c3c3c;
 }
 
-Helping to add depth to your list use a border-bottom use differing coloring
-to create different shades lighter.
+Helping to add depth to your list use a border-bottom with differing coloring to create different shades to a list item from its background.
 
+28. div p:only-child {
+   color: red;
+}
 
+Targets elements which are the only child of its parent
+
+<div><p> My paragraph here. </p></div>
+<div>
+   <p> Two paragraphs total. </p>
+   <p> Two paragraphs total. </p>
+</div>
+In this case,
 
 Link: https://webdesign.tutsplus.com/the-30-css-selectors-you-must-memorize--net-16048t
 
