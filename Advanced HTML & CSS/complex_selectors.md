@@ -1,8 +1,4 @@
-Of course. Here is your content restructured using `<details>` and `<summary>` tags in Markdown format.
 
-Complex selectors are essential tools in CSS that allow you to target elements with precision. They shape the cascade by increasing the **specificity** of a rule, making it more likely to be applied over more general rules. By combining selectors, you can target elements based on their type, attributes, state (like being hovered over or checked), and position within the document structure (like being the first or last child).
-
------
 
 # Complex Selectors
 
