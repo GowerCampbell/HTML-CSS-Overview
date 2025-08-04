@@ -1,43 +1,64 @@
 # Preprocessors
 
-Take one type of data type and converts it to another using:
-Haml into HTML (https://haml.info/)
-Sass into CSS (https://sass-lang.com/)
+A preprocessor takes one data type and converts it to another. For web development, this often means converting a more powerful, developer-friendly language into standard HTML and CSS. They empower HTML & CSS by removing inefficiencies, making building websites easier and more logical.
 
-Empower HTML & CSS by removing ineffiences making building websites easier and more logical/
+- **Haml** compiles into **HTML**.
+- **Sass/SCSS** compiles into **CSS**.
 
 ## Haml
-Also known as HTML abstraction markup language, writing beautiful markup, proccessed by 
-HTML and promotes DRY and structured markup.
 
-Installation (ruby libary installed)
+**Haml** (HTML Abstraction Markup Language) is a preprocessor for writing clean, structured, and beautiful markup. It promotes the **DRY** (Don't Repeat Yourself) principle and compiles directly into HTML.
+
+<details>
+<summary>How do you install and compile Haml?</summary>
+
+Haml is a Ruby library. You can install it using the following command:
+
+```bash
 gem install haml
+```
 
-Files written in haml become .haml and are converted to html once compiled.
+To compile a `.haml` file into an `.html` file, you run:
+
+```bash
 haml index.haml index.html
+```
 
-Use haml --help to see available options. 
-Does not let you watch a file or directory for changes..
+Haml doesn't natively watch files for changes, so tools like **CodeKit** on Mac are often used to automate compilation. In a **Ruby on Rails** application, you would simply add Haml to your project's `Gemfile`.
 
-Inside of a rails application (A web app written using Ruby) a Haml is added to a GEML 
+</details>
 
-Mac CodeKit: https://codekitapp.com/
+### Haml Syntax
 
-## Doctype
-writing a document in Haml is knowing what type of Doctype is to used. When working 
-with HTML files use <!DOCTYPE html> for HTML5 while Haml document types use !!! 5
+<details>
+<summary>How do you declare a DOCTYPE in Haml?</summary>
 
-## Declaring Elements
-HTML use opening and closing tags while hamel only needs the opening with a %
+Instead of `<!DOCTYPE html>`, you use `!!!` for a standard HTML5 doctype.
 
+```haml
+!!! 5
+```
+
+</details>
+
+<details>
+<summary>How do you declare elements and handle nesting?</summary>
+
+Instead of opening and closing tags, you declare an element with a `%` symbol. **Indentation is crucial** as it defines the nesting structure.
+
+**Haml:**
+
+```haml
 %body
   %header
     %h1 Hello World
   %section
     %p Lorem ipsum dolor sit amet.
- 
-What is important is the indentation to identify nesting.
- 
+```
+
+**Compiled HTML:**
+
+```html
 <body>
   <header>
     <h1>Hello World</h1>
@@ -46,212 +67,192 @@ What is important is the indentation to identify nesting.
     <p>Lorem ipsum dolor sit amet.</p>
   </section>
 </body>
+```
 
-### Handling text must be on the same line as the declared or indented element. 
-It cannot be nested below
+Text must be on the same line as the element declaration or properly indented on the next line.
 
-## Attributes
-The attributes are declatred after the element in either {} or () using Ruby 0r HTML syntax/
-HAML
+</details>
+
+<details>
+<summary>How are attributes assigned to elements?</summary>
+
+Attributes are declared after the element using either curly braces `{}` (Ruby hash syntax) or parentheses `()` (HTML-like syntax).
+
+**Haml:**
+
+```haml
 %img{:src => "shay.jpg", :alt => "Shay Howe"}
 %img{src: "shay.jpg", alt: "Shay Howe"}
 %img(src="shay.jpg" alt="Shay Howe")
+```
 
-HTML
+**Compiled HTML:**
 
+```html
 <img src="shay.jpg" alt="Shay Howe">
+```
 
-## Classes & IDs 
-Are declared the same with a . or a # but they can be treated different:
-HAML
-%section.feature
+</details>
+
+<details>
+<summary>What is the shortcut for declaring classes and IDs?</summary>
+
+Classes (`.`) and IDs (`#`) are declared directly after the element tag, similar to CSS selectors.
+
+**Haml:**
+
+```haml
 %section.feature.special
 %section#hello
 %section#hello.feature(role="region")
-HTML
-<section class="feature"></section>
+```
+
+**Compiled HTML:**
+
+```html
 <section class="feature special"></section>
 <section id="hello"></section>
 <section class="feature" id="hello" role="region"></section>
+```
 
+</details>
 
-## Division Classes & ID
-In the event a class or ID is used on a %div or a <div> it may be imitted and
-the class or ID can be used outright
+<details>
+<summary>Is there a shortcut for `div` elements with a class or ID?</summary>
 
-Haml
+Yes. If you need a `<div>`, you can omit the `%div` and start directly with the class or ID.
+
+**Haml:**
+
+```haml
 .awesome
-.awesome.lesson
 #getting-started.lesson
+```
 
-Compiled HTML
+**Compiled HTML:**
+
+```html
 <div class="awesome"></div>
-<div class="awesome lesson"></div>
 <div class="lesson" id="getting-started"></div>
+```
 
-## Boolean Attributes
-Handled within RUBY or HTML depending on syntax
-HAML
-%input{:type => "checkbox", :checked => true}
-%input(type="checkbox" checked=true)
-%input(type="checkbox" checked)
-HTML
-<input type="checkbox" checked>
+</details>
 
-## Escaping Text
-One of the benefits of Haml is the ability to evaluate and run Ruby.
+<details>
+<summary>What are the two types of comments in Haml?</summary>
 
-But it is mostly used to help code escape using the \ allowung text text to be renderered
-without being executed.
-Haml
-.author
-  = @author
-  \= @author
+- **HTML Comment (`/`):** A forward slash creates a standard HTML comment that will appear in the compiled HTML.
+- **Silent Comment (`-#`):** A hyphen and hash create a silent comment that is completely removed during compilation and does not appear in the final HTML.
 
-HTML 
-<div class="author">
-  Shay Howe
-  = @author
-</div>
+**Haml:**
 
-## Text Escaping Alternatives
-Including a period directly after a link that is not part of the anchor line.
-HTML
-<p>Shay is <a href="#">awesome</a>.</p>
+```haml
+/ This is an HTML comment.
+-# This is a silent comment.
+```
 
-You can add a backslash before the period that will escape the character allowing uou 
-place a blank space between the last word and the period but not give you the desired look.
+**Compiled HTML:**
 
-%p
-  Shay is
-  = succeed "." do
-    %a{:href => "#"} awesome
+```html
+<!-- This is an HTML comment. -->
+```
 
-## Comments
-While <!-- sets up a html comment --> haml uses / the forward slash to set a line
-to be used for commented parts
-Haml
-%div
-  / Commented line
-  Actual line
+</details>
 
-/
-  %div
-    Commented block
+<details>
+<summary>What are Haml filters and what are they used for?</summary>
 
-HTML 
-<!--[if lt IE 9]>
-  <script src="html5shiv.js"></script>
-<![endif]-->
+Filters allow you to embed other languages directly within a Haml file. You declare a filter with a colon (`:`), and all indented content below it will be processed by that filter. Common filters include `:javascript`, `:css`, `:markdown`, and `:sass`.
 
-## Silent Comments
-Haml provides the ability to create Haml specfic comments, letting them differ from general HTML comments in that 
-upon being complued any content with a silent comment is removed from the page. 
+**Haml:**
 
-%div
-  -# Removed line
-  Actual line
-
-<div>
-  Actual line
-</div>
-
-## Filters 
-Allowing for different input types to be used inside Haml using a : colon of the filter 
-:markdown for example, with all the content to be filtered and nested underneath.
-
-## Common Filters
-With the more popular ones of the group being :css or :javascript
-:cdata
-:coffee
-:css
-:erb
-:escaped
-:javascript 
-:less
-:markdown
-:maruku
-:plain
-:preserve
-:ruby
-:sass
-:scss
-:textile
-
-Javascript Filter
-Haml
+```haml
 :javascript
-    $('button').on('click', function(event) {
-       $('p').hide('slow');
-  });
-HTML
-<script>
   $('button').on('click', function(event) {
     $('p').hide('slow');
-  }); 
-</script>
-Haml
-:css 
+  });
+
+:css
   .container {
     margin: 0 auto;
     width: 960px;
   }
+```
 
-  :sass
-  .container
-    margin: 0 auto
-    width: 960px
+**Compiled HTML:**
 
-HTML
+```html
+<script>
+  $('button').on('click', function(event) {
+    $('p').hide('slow');
+  });
+</script>
 <style>
   .container {
     margin: 0 auto;
     width: 960px;
   }
 </style>
+```
 
-## Ruby Interpolation
-Haml can evaluate Ruby used within the text. You wrap the necessary Ruby code inside
+</details>
 
-Haml
+<details>
+<summary>How can you embed Ruby code directly into Haml?</summary>
+
+**Ruby Interpolation** allows you to evaluate Ruby code within an attribute or text by wrapping it in `#{...}`.
+
+**Haml:**
+
+```haml
 %div{:class => "student-#{@student.name}"}
+  Welcome, #{@student.name}!
+```
 
-HTML 
+**Compiled HTML (assuming `@student.name` is "shay"):**
+
+```html
 <div class="student-shay">
+  Welcome, Shay!
+</div>
+```
+
+</details>
 
 ## SCSS & Sass
-Preprocessing languges used  alonglide Haml that make code writing easy and leverage ruby in your code.
-Known as Syntactically Awersome Stylesheets and can come with a strict indented syntax
 
-## Installation
-SCSS and Sass are complied using Ruby to produce CSS files
+**Sass** (Syntactically Awesome Stylesheets) is a CSS preprocessor that adds powerful features like variables, nesting, and mixins. It has two syntaxes: **SCSS** and the original indented syntax, **Sass**.
+
+<details>
+<summary>How do you install and compile Sass?</summary>
+
+Sass is also a Ruby gem.
+
+```bash
+# Install Sass
 gem install sass
-and will use .scss or sass file which will convert to .css:
+
+# Compile a single file
 sass styles.sass styles.css
 
-Excuted within the the directory from which the command is run, should the files reside outside of the directory their path 
-needs to be explicitly stated within the command.
-
-Should changes to a file be ongoing Sass can watch the file, recompile the css every time a change takes place:
+# Watch a file for changes and recompile automatically
 sass --watch styles.sass:styles.css
 
-Additionally compiling or watching individual files, Sass is capable of watching entire directories of files
-and converting them into css:
+# Watch an entire directory
 sass --watch assets/sass:public/css
+```
 
-### Converting Files from SCSS to Sass vice versa
-# Convert Sass to SCSS
-sass-convert styles.sass styles.scss
+</details>
 
-# Convert SCSS to Sass
-sass-convert styles.scss styles.sass
+<details>
+<summary>What is the key syntactical difference between SCSS and Sass?</summary>
 
-## Syntax
-The only difference is severity and syntax of SCSS is not much different from regular CSS and standard css will run inside SCSS
+- **SCSS (.scss):** Uses curly braces `{}` and semicolons `;`, just like standard CSS. In fact, any valid CSS is also valid SCSS.
+- **Sass (.sass):** Uses indentation to define nesting and newlines to separate properties. It omits braces and semicolons for a cleaner, more minimal syntax.
 
-However, Sass is fairly strict and any indenting or character errors will the styles from compiling, while omiting {} curly brackets and semicolons ;
+**SCSS:**
 
-SCSS
+```scss
 .new {
   color: #ff7b29;
   font-weight: bold;
@@ -259,47 +260,50 @@ SCSS
     text-transform: uppercase;
   }
 }
+```
 
-Sass
+**Sass:**
+
+```sass
 .new
   color: #ff7b29
   font-weight: bold
   span
     text-transform: uppercase
+```
 
-CSS
+</details>
 
-.new {
-  color: #ff7b29;
-  font-weight: bold;
-}
-.new span {
-  text-transform: uppercase;
-}
+### Sass Features
 
-## SCSS vs Sass
-Personal preference and is based on a specific team or project. 
-Because Sass requires less characters and gives cleaner syntax, Sass will not allow
-straight CSS iput.
+<details>
+<summary>How does nesting work in Sass?</summary>
 
+You can nest selectors inside one another to create compound selectors, which helps organize your styles and mirrors your HTML structure. You can also nest properties like `font` or `border`.
 
-## Nesting
-Notice gow the selectors maybe be nested inside onre another to create compound selectors. 
+**Sass Nesting:**
 
-Do **NOT** nest selectors for unapparent reasons or go overboard nesting:
-
-Sass.
-portfolio
+```sass
+.portfolio
   border: 1px solid #9799a7
   ul
     list-style: none
   li
     float: left
 
-CSS
+  // Property Nesting
+  font:
+    family: Baskerville, serif
+    style: italic
+```
 
+**Compiled CSS:**
+
+```css
 .portfolio {
   border: 1px solid #9799a7;
+  font-family: Baskerville, serif;
+  font-style: italic;
 }
 .portfolio ul {
   list-style: none;
@@ -307,244 +311,184 @@ CSS
 .portfolio li {
   float: left;
 }
+```
 
-## Nesting Properties
+</details>
 
-From font, margin, padding or border properties. 
+<details>
+<summary>What is the parent selector `&` used for?</summary>
 
-Sass
-div
-  font:
-    family: Baskerville, Palatino, serif
-    style: italic
-    weight: normal
+The ampersand `&` refers to the parent selector. It's most commonly used for applying pseudo-classes like `:hover` or for adding a qualifying class to the parent.
 
-CSS
-div {
-  font-family: Baskerville, Palatino, serif;
-  font-style: italic;
-  font-weight: normal;
-}
+**Sass:**
 
-## Nested Media Queries
-Individual Media queries may be nested inside a selector, changing propert values based 
-off a media condition 
-Sass
-.container
-  width: 960px
-  @media screen and (max-width: 960px)
-    width: 100%
-CSS
-.container {
-  width: 960px;
-}
-@media screen and (max-width: 960px) {
-  .container {
-    width: 100%;
-  }
-}
-
-## Parent Selector
-Adding a style that effects the type, class or id we can use an ampersand, & in conjunction with a 
-pseudo-class OR used to bind additional selectors to its its parent as &.featured.
-
-Sass
-a 
+```sass
+a
   color: #0087cc
   &:hover
     color: #ff7b29
-CSS
+
+.btn
+  // Prepends .no-cssgradients to .btn
+  .no-cssgradients &
+    background: url("gradient.png")
+```
+
+**Compiled CSS:**
+
+```css
 a {
   color: #0087cc;
 }
- a:hover {
+a:hover {
   color: #ff7b29;
 }
-## Parent Key Selector
-Adding qualifying selectors to make compound selectors.
-Sass
-.btn
-  background: linear-gradient(#fff, #9799a7)
-  .no-cssgradients &
-    background: url("gradient.png") 0 0 repeat-x
-CSS
-.btn {
-  background: linear-gradient(#fff, #9799a7);
-}
 .no-cssgradients .btn {
-  background: url("gradient.png") 0 0 repeat-x;
+  background: url("gradient.png");
 }
+```
 
-## Comments
-Sass handles comments similar to that of Haml using /*...*/ for both.
-However, be aware there is a syntax for "silient comments" 
-Sass
-/* Normal comment */
-div
-  background: #333
-// Omitted comment
-strong
-  display: block
-CSS
-/* Normal comment */
-div {
-  background: #333;
-}
+</details>
 
-strong {
-  display: block;
-}
-## Variables
-Sass allows us to define and store varibles defined by a $ sign and a :
-From a number, string, color or boolean, null or even a list of values.
-Sass
-$font-base: 1em
-$serif: "Helvetica Neue", Arial, "Lucida Grande", sans-serif
+<details>
+<summary>How do you declare and use variables?</summary>
 
-p
-  font: $font-base $serif
+Variables store reusable values like colors, fonts, or measurements. They are declared with a `$` sign. You can also use **variable interpolation** `#{...}` to use a variable's value within a selector or property name.
 
-CSS
-p {
-  font: 1em "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
-}
+**Sass:**
 
-## Variable Interpolation
-It can be used anywhere inside a Sass document giving you a class name, property and a string of text
-Sass
+```sass
+// Variable Declaration
+$primary-color: #ff7b29
+$base-font: "Helvetica Neue", Arial, sans-serif
+
+// Variable Usage
+body
+  font-family: $base-font
+  color: $primary-color
+
+// Interpolation
 $location: chicago
-$offset: left
-
 .#{$location}
-  #{$offset}: 20px
+  background: $primary-color
+```
 
-CSS
-.chicago {
-  left: 20px;
+</details>
+
+<details>
+<summary>What is the difference between `@extend` and a `@mixin`?</summary>
+
+- **`@extend`:** Is used to share sets of CSS properties from one selector to another. It groups the extending selectors together in the compiled CSS, keeping the code DRY. It is best for sharing **static** style sets.
+- **`@mixin`:** Is like a function that can take arguments to create reusable blocks of styles. It's ideal for creating **dynamic** styles or for vendor prefixing, where you need to repeat a block of code with slight variations.
+
+**Extend Example:**
+
+```sass
+%alert
+  padding: 10px 20px
+  border-radius: 10px
+
+.alert-error
+  @extend %alert
+  background: #f2dede
+```
+
+**Mixin Example:**
+
+```sass
+@mixin box-shadow($shadow...)
+  -webkit-box-shadow: $shadow
+  box-shadow: $shadow
+
+.card
+  @include box-shadow(0 1px 3px rgba(0,0,0,0.2))
+```
+
+</details>
+
+<details>
+<summary>How do you manage multiple files with Sass?</summary>
+
+The `@import` directive allows you to import multiple `.scss` or `.sass` files (often called "partials") into a single main file. This helps organize your code into logical modules (e.g., `_variables.scss`, `_grid.scss`, `_typography.scss`) without creating extra HTTP requests.
+
+**Sass:**
+
+```sass
+// In styles.scss
+@import "normalize"
+@import "grid", "typography"
+```
+
+</details>
+
+<details>
+<summary>How do control directives like loops and conditionals work?</summary>
+
+Sass includes logic for more advanced styling.
+
+- **`@if`:** Applies styles based on a condition, similar to `if/else` statements in other languages.
+- **`@for`:** Outputs styles in a loop based on a counter variable.
+- **`@each`:** Loops through each item in a list and applies a style.
+- **`@while`:** Continues to output styles until a statement becomes false.
+
+**`@for` Loop Example:**
+
+```sass
+@for $col from 1 through 4
+  .col-#{$col}
+    width: (100% / 4) * $col
+```
+
+</details>
+
+<details>
+<summary>How does Sass handle colors and color functions?</summary>
+
+Sass provides a suite of functions to manipulate colors. You can programmatically `lighten`, `darken`, `saturate`, `desaturate`, `mix`, and `adjust` colors.
+
+**Sass:**
+
+```sass
+$brand-color: #8ec63f
+
+.button
+  background: $brand-color
+  &:hover
+    background: lighten($brand-color, 10%)
+
+.text
+  color: complement($brand-color)
+```
+
+**Compiled CSS:**
+
+```css
+.button {
+  background: #8ec63f;
 }
+.button:hover {
+  background: #a5d36b;
+}
+.text {
+  color: #773fc6;
+}
+```
 
-## Calculations
-We can then do calculations in a variety of different manners to handle problems such as addition, subtraction, division, multiplication and rounding.
+</details>
 
-Tied to an equation with operators
+### Other Preprocessors & Resources
 
-Sass
-width: 40px + 6
-width: 40px - 6
-width: 40px * 6
-width: 40px % 6
+While Haml and Sass are popular choices that fit well into a Ruby on Rails ecosystem, other tools may be better for your project or team.
 
-CSS
-width: 46px;
-width: 34px;
-width: 240px;
-width: 4px;
+- **HTML/Templating:** Slim, Jade (now Pug)
+- **CSS/Styling:** Less
+- **JavaScript:** CoffeeScript
 
-## Division
-The value resides in that unit
-Sass
-width: 100px / 10
-width: (100px / 10)
-width: (100px / 10px)
-$width: 100px
-width: $width / 10
-width: 5px - 100px / 10
-CSS
-width: 100px/10;
-width: 10px;
-width: 10;
-width: 10px;
-width: -5px;
+When choosing a preprocessor, consider what will work best for your team's skillset and the project's technology stack (e.g., a Node.js project might benefit from Pug and Less).
 
-## Detailed Math
-Math operations based on parentheses
-Sass
-$grid: 16
-$column: 40px
-$gutter: 20px
-$container: ($column * $grid) + ($gutter * $grid)
+#### Resources & Links
 
-width: $container
-
-CSS
-width: 960px;
-
-## Number Functions 
-default Sass allows us to manipulate number values as we wish.
-Sass
-width: percentage(2.5) /* Turns value into % */
-width: round(2.5px) /* rounds a value to the closest number, defaulting up */
-width: ceil(2.5px) /* rounds a value up to the closest whole number */
-width: floor(2.5px) /* rounds a value down to closest whole number */
-width: abs(-2.5px) /* finds absolute value of a given number */
-
-CSS
-width: 250%;
-width: 3px;
-width: 3px;
-width: 2px;
-width: 2.5px;
-
-## Color
-Sass provides a better assistance with working with colors, providing a handeful of features to alter and manipulate colors.
-Sass
-color: rgba(#8ec63f, .25)
-
-$green: #8ec63f
-color: rgba($green, .25)
-
-CSS
-color: rgba(142, 198, 63, .25);
-
-## Color Operations
-Colors using addition, subtraction, multipication and division/
-
-Performed the red, green, blue components.
-Sass
-color: #8ec63f + #666
-color: #8ec63f * 2
-color: rgba(142, 198, 63, .75) / rgba(255, 255, 255, .75)
-CSS
-color: #f4ffa5;
-color: #ffff7e;
-color: rgba(0, 0, 0, .75);
-
-## Color Alterations
-Color operators are helpful for inverse colores, complementary blends, mixing two colors together and find the grayscale value of a color
-Sass
-color: invert(#8ec63f)
-color: complement(#8ec63f)
-color: mix(#8ec63f, #fff)
-color: mix(#8ec63f, #fff, 10%)
-color: grayscale(#8ec63f)
-CSS
-color: #7139c0;
-color: #773fc6;
-color: #c6e29f;
-color: #f3f9eb;
-color: #838383;
-
-## HSLa Color Alterations
-Adding more alterations to HSLa color
-Sass
-color: lighten(#8ec63f, 50%)
-color: darken(#8ec63f, 30%)
-color: saturate(#8ec63f, 75%)
-color: desaturate(#8ec63f, 25%)
-color: adjust-hue(#8ec63f, 30)
-color: adjust-hue(#8ec63f, -30)
-color: fade-in(rgba(142, 198, 63, 0), .4)
-color: fade-out(#8ec63f, .4)
-
-CSS
-color: white;
-color: #3b5319;
-color: #98ff06;
-color: #89a75e;
-color: #4ac63f;
-color: #c6bb3f;
-color: rgba(142, 198, 63, 0.4);
-color: rgba(142, 198, 63, 0.6);
-
-## Color Manipulation
+- [Haml Reference](https://haml.info/docs/yardoc/file.REFERENCE.html)
+- [Sass Documentation](https://sass-lang.com/documentation/)
+- [Sass Modules](https://sass-lang.com/documentation/modules/)
 
