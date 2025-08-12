@@ -314,7 +314,7 @@ This example combines `perspective`, `translateZ`, `rotateX`, `rotateY`, and `tr
 
 -----
 
-## Revision: Q\&A 🧠
+## Revision: Q\&A 
 
 Here are some questions to test your knowledge.
 
