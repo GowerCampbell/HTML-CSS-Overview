@@ -1,5 +1,5 @@
 
-# CSS Transforms 🚀
+# CSS Transforms
 
 The CSS `transform` property lets you modify the coordinate space of the CSS visual formatting model. Essentially, it allows you to **move, rotate, scale, and skew elements** in both two-dimensional and three-dimensional space.
 
@@ -318,42 +318,42 @@ This example combines `perspective`, `translateZ`, `rotateX`, `rotateY`, and `tr
 
 Here are some questions to test your knowledge.
 
-\<details\>
-\<summary\>\<strong\>Q1:\</strong\> What is the main purpose of the CSS \<code\>transform\</code\> property?\</summary\>
-\<strong\>A:\</strong\> To move, rotate, scale, and skew elements in 2D or 3D space without affecting the document's layout flow.
-\</details\>
+<details>
+<summary><strong>Q1:</strong> What is the main purpose of the CSS <code>transform</code> property?</summary>
+<strong>A:</strong> To move, rotate, scale, and skew elements in 2D or 3D space without affecting the document's layout flow.
+</details>
 
-\<details\>
-\<summary\>\<strong\>Q2:\</strong\> Why should the standard \<code\>transform\</code\> property be listed last after vendor-prefixed versions?\</summary\>
-\<strong\>A:\</strong\> To ensure that if a browser supports the standard syntax, it will override the older, prefixed versions. It's a best practice for forward compatibility.
-\</details\>
+<details>
+<summary><strong>Q2:</strong> Why should the standard <code>transform</code> property be listed last after vendor-prefixed versions?</summary>
+<strong>A:</strong> To ensure that if a browser supports the standard syntax, it will override the older, prefixed versions. It's a best practice for forward compatibility.
+</details>
 
-\<details\>
-\<summary\>\<strong\>Q3:\</strong\> What is the difference between \<code\>transform: rotate(45deg)\</code\> and \<code\>transform: rotate(-45deg)\</code\>?\</summary\>
-\<strong\>A:\</strong\> \<code\>rotate(45deg)\</code\> rotates the element 45 degrees clockwise. \<code\>rotate(-45deg)\</code\> rotates it 45 degrees counter-clockwise.
-\</details\>
+<details>
+<summary><strong>Q3:</strong> What is the difference between <code>transform: rotate(45deg)</code> and <code>transform: rotate(-45deg)</code>?</summary>
+<strong>A:</strong> <code>rotate(45deg)</code> rotates the element 45 degrees clockwise. <code>rotate(-45deg)</code> rotates it 45 degrees counter-clockwise.
+</details>
 
-\<details\>
-\<summary\>\<strong\>Q4:\</strong\> An element has \<code\>transform: scale(2)\</code\>. How does this differ from \<code\>transform: scale(0.5)\</code\>?\</summary\>
-\<strong\>A:\</strong\> \<code\>scale(2)\</code\> doubles the size of the element. \<code\>scale(0.5)\</code\> reduces the size of the element by half.
-\</details\>
+<details>
+<summary><strong>Q4:</strong> An element has <code>transform: scale(2)</code>. How does this differ from <code>transform: scale(0.5)</code>?</summary>
+<strong>A:</strong> <code>scale(2)</code> doubles the size of the element. <code>scale(0.5)</code> reduces the size of the element by half.
+</details>
 
-\<details\>
-\<summary\>\<strong\>Q5:\</strong\> What is the default \<code\>transform-origin\</code\> of an element?\</summary\>
-\<strong\>A:\</strong\> The default is \<code\>50% 50%\</code\>, which is the exact center of the element.
-\</details\>
+<details>
+<summary><strong>Q5:</strong> What is the default <code>transform-origin</code> of an element?</summary>
+<strong>A:</strong> The default is <code>50% 50%</code>, which is the exact center of the element.
+</details>
 
-\<details\>
-\<summary\>\<strong\>Q6:\</strong\> To create a 3D scene, what CSS property is essential?\</summary\>
-\<strong\>A:\</strong\> The \<code\>perspective\</code\> property. It must be applied either to the transformed element or its parent to create a 3D space and give a sense of depth.
-\</details\>
+<details>
+<summary><strong>Q6:</strong> To create a 3D scene, what CSS property is essential?</summary>
+<strong>A:</strong> The <code>perspective</code> property. It must be applied either to the transformed element or its parent to create a 3D space and give a sense of depth.
+</details>
 
-\<details\>
-\<summary\>\<strong\>Q7:\</strong\> What does \<code\>transform-style: preserve-3d;\</code\> accomplish?\</summary\>
-\<strong\>A:\</strong\> It allows a transformed child element to exist in its own 3D space, relative to its parent. Without it, the child element would be flattened into the parent's 2D plane.
-\</details\>
+<details>
+<summary><strong>Q7:</strong> What does <code>transform-style: preserve-3d;</code> accomplish?</summary>
+<strong>A:</strong> It allows a transformed child element to exist in its own 3D space, relative to its parent. Without it, the child element would be flattened into the parent's 2D plane.
+</details>
 
-\<details\>
-\<summary\>\<strong\>Q8:\</strong\> How would you make an element disappear when its back is facing the camera?\</summary\>
-\<strong\>A:\</strong\> By applying \<code\>backface-visibility: hidden;\</code\> to the element.
-\</details\>
+<details>
+<summary><strong>Q8:</strong> How would you make an element disappear when its back is facing the camera?</summary>
+<strong>A:</strong> By applying <code>backface-visibility: hidden;</code> to the element.
+</details>
