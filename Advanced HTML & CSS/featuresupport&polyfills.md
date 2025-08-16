@@ -201,18 +201,32 @@ Internet Explorer has built-in development tools like web inspector and debuggin
 
 -----
 
-\<details\>
-\<summary\>Test Yourself\</summary\>
+<details>
+<summary>Test Yourself</summary>
 
-  * **What problem does the HTML5 Shiv solve?**
-      * It allows older browsers (like IE \< 9) to recognize and style new HTML5 elements (e.g., `<section>`, `<article>`), which they would otherwise treat as unknown inline elements.
-  * **What is the difference between a "shiv" and a "shim"?**
-      * According to these notes, they are the same and the terms are used interchangeably.
-  * **How does Modernizr help with applying conditional CSS?**
-      * It detects if a browser supports a specific feature (like CSS gradients) and adds a class to the `<html>` tag (e.g., `.cssgradients` or `.no-cssgradients`). You can then target these classes in your CSS to provide styles for browsers that do or do not support the feature.
-  * **What is a polyfill?**
-      * It's a piece of code (usually JavaScript) that provides the functionality of a modern web feature in older browsers that don't natively support it.
-  * **Why is it beneficial to conditionally load a script based on a media query?**
-      * It improves performance by not loading unnecessary files. For example, you can avoid loading a complex JavaScript file for desktop-only features on a mobile device.
+  <details>
+  <summary>What problem does the HTML5 Shiv solve?</summary>
+  It allows older browsers (like IE < 9) to recognize and style new HTML5 elements (e.g., `<section>`, `<article>`), which they would otherwise treat as unknown inline elements.
+  </details>
 
-\</details\>
+  <details>
+  <summary>What is the difference between a "shiv" and a "shim"?</summary>
+  According to these notes, they are the same, and the terms are used interchangeably.
+  </details>
+
+  <details>
+  <summary>How does Modernizr help with applying conditional CSS?</summary>
+  It detects if a browser supports a specific feature (like CSS gradients) and adds a class to the `<html>` tag (e.g., `.cssgradients` or `.no-cssgradients`). You can then target these classes in your CSS to provide styles for browsers that do or do not support the feature.
+  </details>
+
+  <details>
+  <summary>What is a polyfill?</summary>
+  It's a piece of code (usually JavaScript) that provides the functionality of a modern web feature in older browsers that don't natively support it.
+  </details>
+
+  <details>
+  <summary>Why is it beneficial to conditionally load a script based on a media query?</summary>
+  It improves performance by not loading unnecessary files. For example, you can avoid loading a complex JavaScript file for desktop-only features on a mobile device.
+  </details>
+
+</details>
