@@ -4,7 +4,7 @@ Using HTML & CSS to write behaviors for transitions and animations without JavaS
 
 -----
 
-## Transitions (like butter 🧈)
+## Transitions (like butter )
 
 Transitions smooth out value changes from user interactions over a specified duration. They are often triggered by pseudo-classes like `:hover`, `:focus`, `:active`, and `:target`.
 
@@ -352,41 +352,44 @@ All animation properties can be combined into the shorthand `animation` property
 
 **Helpful Link:** [MDN: Using CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations)
 
------
+---
 
-## Test Your Knowledge 🤔
+## Test Your Knowledge 
 
-\<details\>
-\<summary\>What is the main difference between a CSS transition and a CSS animation?\</summary\>
-\<p\>Transitions are used to animate an element from a starting state to an ending state, typically triggered by a pseudo-class like \<code\>:hover\</code\>. Animations are more powerful and allow for multi-step sequences defined in a \<code\>@keyframes\</code\> rule, giving you more control over the intermediate steps of the effect.\</p\>
-\</details\>
+<details>
+<summary>What is the main difference between a CSS transition and a CSS animation?</summary>
+<p>Transitions are used to animate an element from a starting state to an ending state, typically triggered by a pseudo-class like <code>:hover</code>. Animations are more powerful and allow for multi-step sequences defined in an <code>@keyframes</code> rule, giving you more control over the intermediate steps of the effect.</p>
+</details>
 
-\<details\>
-\<summary\>What are the four main properties used to define a transition?\</summary\>
-\<p\>The four properties are: \<code\>transition-property\</code\>, \<code\>transition-duration\</code\>, \<code\>transition-timing-function\</code\>, and \<code\>transition-delay\</code\>.\</p\>
-\</details\>
+<details>
+<summary>What are the four main properties used to define a transition?</summary>
+<p>The four properties are: <code>transition-property</code>, <code>transition-duration</code>, <code>transition-timing-function</code>, and <code>transition-delay</code>.</p>
+</details>
 
-\<details\>
-\<summary\>What is the correct value order for the shorthand \<code\>transition\</code\> property?\</summary\>
-\<p\>The order is: property, duration, timing-function, and delay. For example: \<code\>transition: background-color 1s ease-in 0.5s;\</code\>\</p\>
-\</details\>
+<details>
+<summary>What is the correct value order for the shorthand <code>transition</code> property?</summary>
+<p>The order is: property, duration, timing-function, and delay. For example: <code>transition: background-color 1s ease-in 0.5s;</code></p>
+</details>
 
-\<details\>
-\<summary\>What is the purpose of the \<code\>@keyframes\</code\> rule in CSS?\</summary\>
-\<p\>The \<code\>@keyframes\</code\> rule is used to define the stages (or breakpoints) of an animation sequence. You assign a name to the animation and specify the CSS styles for different points in time, using percentages from 0% (the start) to 100% (the end).\</p\>
-\</details\>
+<details>
+<summary>What is the purpose of the <code>@keyframes</code> rule in CSS?</summary>
+<p>The <code>@keyframes</code> rule is used to define the stages (or breakpoints) of an animation sequence. You assign a name to the animation and specify the CSS styles for different points in time, using percentages from 0% (the start) to 100% (the end).</p>
+</details>
 
-\<details\>
-\<summary\>How can you make a CSS animation repeat forever?\</summary\>
-\<p\>By setting the \<code\>animation-iteration-count\</code\> property to the value \<code\>infinite\</code\>.\</p\>
-\</details\>
+<details>
+<summary>How can you make a CSS animation repeat forever?</summary>
+<p>By setting the <code>animation-iteration-count</code> property to the value <code>infinite</code>.</p>
+</details>
 
-\<details\>
-\<summary\>What does the \<code\>animation-direction\</code\> value \<code\>alternate\</code\> do?\</summary\>
-\<p\>It makes the animation play forwards on odd-numbered iterations (1, 3, 5, etc.) and backwards on even-numbered iterations (2, 4, 6, etc.).\</p\>
-\</details\>
+<details>
+<summary>What does the <code>animation-direction</code> value <code>alternate</code> do?</summary>
+<p>It makes the animation play forwards on odd-numbered iterations (1, 3, 5, etc.) and backwards on even-numbered iterations (2, 4, 6, etc.).</p>
+</details>
 
-\<details\>
-\<summary\>What is the purpose of the \<code\>animation-fill-mode\</code\> property?\</summary\>
-\<p\>It determines how an element is styled before the animation starts and/or after it ends. For example, \<code\>forwards\</code\> will make the element retain the styles from its final keyframe.\</p\>
-\</details\>
+<details>
+<summary>What is the purpose of the <code>animation-fill-mode</code> property?</summary>
+<p>It determines how an element is styled before the animation starts and/or after it ends. For example, <code>forwards</code> will make the element retain the styles from its final keyframe.</p>
+</details>
+
+---
+
