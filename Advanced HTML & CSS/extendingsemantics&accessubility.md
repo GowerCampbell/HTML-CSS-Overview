@@ -192,36 +192,36 @@ Roles help specify what certain elements and blocks of content do on a page. **L
 These attributes provide information about the current state of an element to assistive technologies (e.g., `aria-hidden`, `aria-required`).
 Link: [https://www.w3.org/TR/wai-aria/\#states\_and\_properties](https://www.w3.org/TR/wai-aria/#states_and_properties)
 
------
 
 ## Questions and Answers
 
-\<details\>
-\<summary\>Question 1: What is the difference between the \<code\>\&lt;strong\&gt;\</code\> and \<code\>\&lt;b\&gt;\</code\> elements in HTML?\</summary\>
-\<p\>The \<code\>\&lt;strong\&gt;\</code\> element indicates text with strong importance, often rendered in bold, emphasizing its significance. The \<code\>\&lt;b\&gt;\</code\> element is used for text that is stylistically offset, also typically bold, but without conveying importance, such as for visual distinction.\</p\>
-\</details\>
+<details>
+<summary>Question 1: What is the difference between the <code>&lt;strong&gt;</code> and <code>&lt;b&gt;</code> elements in HTML?</summary>
+<p>The <code>&lt;strong&gt;</code> element indicates text with strong importance, typically rendered in bold, emphasizing its significance. The <code>&lt;b&gt;</code> element is used for text that is stylistically offset, also typically bold, but without conveying importance, such as for visual distinction.</p>
+</details>
 
-\<details\>
-\<summary\>Question 2: How does the \<code\>\&lt;em\&gt;\</code\> element differ from the \<code\>\&lt;i\&gt;\</code\> element in terms of semantic meaning?\</summary\>
-\<p\>The \<code\>\&lt;em\&gt;\</code\> element places a stressed emphasis on text, indicating importance or urgency, typically rendered in italics. The \<code\>\&lt;i\&gt;\</code\> element identifies text in an alternate voice or tone, such as foreign words or names, also italicized, but without implying emphasis.\</p\>
-\</details\>
+<details>
+<summary>Question 2: How does the <code>&lt;em&gt;</code> element differ from the <code>&lt;i&gt;</code> element in terms of semantic meaning?</summary>
+<p>The <code>&lt;em&gt;</code> element places stressed emphasis on text, indicating importance or urgency, typically rendered in italics. The <code>&lt;i&gt;</code> element identifies text in an alternate voice or tone, such as foreign words or names, also italicized, but without implying emphasis.</p>
+</details>
 
-\<details\>
-\<summary\>Question 3: What is the purpose of the \<code\>hidden\</code\> attribute, and why is it preferred over CSS \<code\>display: none\</code\> for accessibility?\</summary\>
-\<p\>The \<code\>hidden\</code\> attribute is a boolean attribute that hides an element from all users, including screen readers, ensuring it is not interpreted by assistive technologies. It is preferred over CSS \<code\>display: none\</code\> because it is a semantic HTML attribute that explicitly communicates the hidden state to all devices and assistive technologies, improving accessibility.\</p\>
-\</details\>
+<details>
+<summary>Question 3: What is the purpose of the <code>hidden</code> attribute, and why is it preferred over CSS <code>display: none</code> for accessibility?</summary>
+<p>The <code>hidden</code> attribute is a boolean attribute that hides an element from all users, including screen readers, ensuring it is not interpreted by assistive technologies. It is preferred over CSS <code>display: none</code> because it is a semantic HTML attribute that explicitly communicates the hidden state to all devices and assistive technologies, improving accessibility.</p>
+</details>
 
-\<details\>
-\<summary\>Question 4: What are the roles of the \<code\>\&lt;meter\&gt;\</code\> and \<code\>\&lt;progress\&gt;\</code\> elements, and how do their attributes differ?\</summary\>
-\<p\>The \<code\>\&lt;meter\&gt;\</code\> element measures a fixed value within a defined range, using attributes like \<code\>min\</code\>, \<code\>max\</code\>, \<code\>low\</code\>, \<code\>high\</code\>, \<code\>optimum\</code\>, and \<code\>value\</code\> to represent static measurements. The \<code\>\&lt;progress\&gt;\</code\> element indicates the completion progress of a task, using \<code\>value\</code\> and \<code\>max\</code\> attributes to show how much has been completed relative to the total.\</p\>
-\</details\>
+<details>
+<summary>Question 4: What are the roles of the <code>&lt;meter&gt;</code> and <code>&lt;progress&gt;</code> elements, and how do their attributes differ?</summary>
+<p>The <code>&lt;meter&gt;</code> element measures a fixed value within a defined range, using attributes like <code>min</code>, <code>max</code>, <code>low</code>, <code>high</code>, <code>optimum</code>, and <code>value</code> to represent static measurements. The <code>&lt;progress&gt;</code> element indicates the completion progress of a task, using <code>value</code> and <code>max</code> attributes to show how much has been completed relative to the total.</p>
+</details>
 
-\<details\>
-\<summary\>Question 5: How does the \<code\>itemscope\</code\> attribute contribute to microdata, and what is its relationship with \<code\>itemtype\</code\> and \<code\>itemprop\</code\>?\</summary\>
-\<p\>The \<code\>itemscope\</code\> attribute declares the scope of a microdata item, marking the parent element containing related microdata. The \<code\>itemtype\</code\> attribute specifies the microdata vocabulary (e.g., from Schema.org), defining the type of item, such as Person or Event. The \<code\>itemprop\</code\> attribute identifies specific properties within the scope, with the element’s content or attributes (e.g., \<code\>href\</code\>, \<code\>src\</code\>) providing the property’s value.\</p\>
-\</details\>
+<details>
+<summary>Question 5: How does the <code>itemscope</code> attribute contribute to microdata, and what is its relationship with <code>itemtype</code> and <code>itemprop</code>?</summary>
+<p>The <code>itemscope</code> attribute declares the scope of a microdata item, marking the parent element containing related microdata. The <code>itemtype</code> attribute specifies the microdata vocabulary (e.g., from Schema.org), defining the type of item, such as Person or Event. The <code>itemprop</code> attribute identifies specific properties within the scope, with the element’s content or attributes (e.g., <code>href</code>, <code>src</code>) providing the property’s value.</p>
+</details>
 
-\<details\>
-\<summary\>Question 6: What are WAI-ARIA roles, and how do they enhance accessibility for HTML elements like \<code\>header\</code\> and \<code\>nav\</code\>?\</summary\>
-\<p\>WAI-ARIA roles define the purpose or behavior of elements (e.g., \<code\>banner\</code\> for header, \<code\>navigation\</code\> for nav), enhancing accessibility by providing additional context to assistive technologies. They help screen readers and other tools understand the structure and functionality of content, especially for dynamic or complex interfaces, ensuring better navigation and interaction for users with disabilities.\</p\>
-\</details\>
+<details>
+<summary>Question 6: What are WAI-ARIA roles, and how do they enhance accessibility for HTML elements like <code>header</code> and <code>nav</code>?</summary>
+<p>WAI-ARIA roles define the purpose or behavior of elements (e.g., <code>banner</code> for header, <code>navigation</code> for nav), enhancing accessibility by providing additional context to assistive technologies. They help screen readers and other tools understand the structure and functionality of content, especially for dynamic or complex interfaces, ensuring better navigation and interaction for users with disabilities.</p>
+</details>
+
