@@ -19,7 +19,7 @@ I believe in learning in public. Here are my structured notes from the foundatio
 
 - **HTML & CSS Advanced**
   - Notes from the [Advanced HTML & CSS](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/) reading about Media Quries to create flexible, responsive designs.
-  - **[➡️ View Notes: Responsive Web Design.md](Advanced HTML & CSS)**
+  - **[➡️ View Notes ](Advanced HTML & CSS)**
 
 - **Developing Stylish Websites**
   - Takeaways from Shay Howe's ["Learn to Code HTML & CSS"](https://learn.shayhowe.com/html-css/), focusing on building a complete website from scratch.
