@@ -83,6 +83,31 @@ Note: Not all browsers will support the space-between proptery (safest are flex-
 Including vues + safe or unsafe ensures that the browser does not push an element that it renders off screen.
 
 #### align-items
+This defines the defult of items laid out of the cross axis on the current line. Think of it as the "justify-content" 
+
+.container {
+  align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+}
+
+- stretch: fill the container (respect min-width/mx-width)
+- flex-start/start/self-start: items plced at the start of the croxx axis and it is bout the flex-direction of the flex item.
+- flex-end/end/self-end: items are placed at the end of the cross axis, the difference
+- center: items are centered in the cross-axis
+- baseline: items are aligned such as their baselines lign
+
+Rember the safe & unsafe modifier with the key words and deal with helping wwith aligning elements.
+
+#### align-content 
+This aligns a flex container lines when theres is extra space in the cross-axis simular to how justify-content ligns individual items within the main-axis. 
+
+.container {
+  align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
+}
+
+From the normal to be packed into a contianer, from flex-start/start is packed to the container honoring either the flex-direction or writing-mode direction, which is the same with the flex-end/end. The center 
+
+##### Note:
+This property only takes effect on multi-line flexible containers where flex-wrap is set to either wrap or wrap-reverse and will not reflect align-content.
 
 ### Properties for the Children (flex items)
 <img href="https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg" alt="The flex items" />
