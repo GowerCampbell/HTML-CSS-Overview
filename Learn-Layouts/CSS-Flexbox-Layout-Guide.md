@@ -104,12 +104,289 @@ This aligns a flex container lines when theres is extra space in the cross-axis 
   align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
 }
 
-From the normal to be packed into a contianer, from flex-start/start is packed to the container honoring either the flex-direction or writing-mode direction, which is the same with the flex-end/end. The center 
+From the normal to be packed into a contianer, from flex-start/start is packed to the container honoring either the flex-direction or writing-mode direction, which is the same with the flex-end/end. The center and the space-between distribute from the center between. The space-around items are distributed with equal spce around them. The stretch lines strech to take up any remaining space. And again the safe and unsafe are used as modifiers.
 
 ##### Note:
 This property only takes effect on multi-line flexible containers where flex-wrap is set to either wrap or wrap-reverse and will not reflect align-content.
 
+#### gap, row-gap, column-gap
+The gap property controls the space between flex items. It applies that spacing only between items not on the outer edges.
+
+.container {
+  display: flex;
+  ...
+  gap: 10px;
+  gap: 10px 20px; /* row-gap column gap */
+  row-gap: 10px;
+  column-gap: 20px;
+}
+
+Conside it as a gutter that suts between items and controls it within the flexbox.
+
 ### Properties for the Children (flex items)
 <img href="https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg" alt="The flex items" />
 
+#### Order
+By default flex items are laid out in source order, though we control the order by the: 
+
+.item {
+  order: 5; /* default is 0 */
+}
+
+Items with the same order revert to source order.
+
+#### flex-grow
+
+defines the ability for a flex item to grow using a unitless value flex-value from 1 to 2 will take up twice as much space.
+
+.item {
+  flex-grow: 4; /* default 0 */
+}
+Negative numbers are invalid.
+
+#### flex-shrink
+defines the ability for a flex item to shrink 
+.item {
+  flex-shrink: 3; /* default 1 */
+
+}
+
+  Negative numbers are invalid.
+
+  #### flex-basis
+This defines the default size of an element before the space is distributed.
+The auto keyword means "look at my width or height property from the main-size" using the items content: max-content, min-content and fit-content.
+If set to 0 the extra space isnt factored in.
+
+item {
+  flex-basis:  | auto; /* default auto */
+}
+and if set to auto it distribute on its flex-grow value
+
+#### flex 
+shorthand for flex-grow, flex-shrink and flex-basis combined. 
+
+.item {
+  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+}
+Use this than individual properties.
+
+#### align-self
+From default alignement to be overridden for 
+
+.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+
+Note: the properties: float, clear and vertical-align has no effect on a flex item
+
+## Prefixing Flexbox
+From the vendor creating "old", "tweener" or "new" versions using different propertys or value names.
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+.wrapper {
+  @include flexbox();
+}
+
+.item {
+  @include flex(1 200px);
+  @include order(2);
+}
+
+## Examples
+Lets start with a very simple example, solving a daily problem from centering with a flexbox. 
+
+.parent {
+  display: flex;
+  height: 300px; /* Or whatever */
+}
+
+.child {
+  width: 100px;  /* Or whatever */
+  height: 100px; /* Or whatever */
+  margin: auto;  /* Magic! */
+}
+
+Rely on the auto margin to align the axes now lets add wht we covered:
+
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+}
+
+Using a right-aligned navigation element on the very top of our website, to be centered on medium sized screens and single-columned on small devices
+
+/* Large */
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: flex-end;
+}
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  .navigation {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-around;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  .navigation {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+If you want to create a mobiles 3 columns layout with a full width header and footer 
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+.wrapper > * {
+  flex: 1 100%;
+}
+
+/* We rely on source order for mobile-first approach
+ * in this case:
+ * 1. header
+ * 2. article
+ * 3. aside 1
+ * 4. aside 2
+ * 5. footer
+ */
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+  /* We tell both sidebars to share a row */
+  .aside { flex: 1 auto; }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  /* We invert order of first sidebar and main
+   * And tell the main element to take twice as much width as the other two sidebars 
+   */
+  .main { flex: 3 0px; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+## FlexBox Tricks
+Link https://css-tricks.com/adaptive-photo-layout-with-flexbox/
+Link https://css-tricks.com/balancing-on-a-pivot-with-flexbox/
+Link https://css-tricks.com/using-flexbox-and-text-ellipsis-together/
+link https://css-tricks.com/useful-flexbox-technique-alignment-shifting-wrapping/
+link https://css-tricks.com/designing-a-product-page-layout-with-flexbox/
+link https://css-tricks.com/flexbox-truncated-text/
+Link: https://css-tricks.com/flexbox-and-absolute-positioning/
+Link: https://css-tricks.com/filling-space-last-row-flexbox/
+
+## Browser Support
+Desktop :21 :28 :11 :12 :6.1
+Mobile/Tablet: :139 :142 :4.4 :7.0-7.1
+
+## Bugs
+Flexbox has bugs and its open sources to track them all: https://github.com/philipwalton/flexbugs
+
+## Related Propeties
+
+align-content
+https://css-tricks.com/almanac/properties/a/align-content/
+
+align-items
+https://css-tricks.com/almanac/properties/a/align-items/
+
+align-self
+https://css-tricks.com/almanac/properties/a/align-self/
+
+column-gap
+https://css-tricks.com/almanac/properties/g/gap/column-gap/
+
+display
+https://css-tricks.com/almanac/properties/d/display/
+
+gap
+https://css-tricks.com/almanac/properties/g/gap/
+
+justify-items
+https://css-tricks.com/almanac/properties/j/justify-items/
+
+flex
+https://css-tricks.com/almanac/properties/f/flex/
+
+flex-basis
+https://css-tricks.com/almanac/properties/f/flex-basis/
+
+flex-direction
+https://css-tricks.com/almanac/properties/f/flex-direction/
+
+flex-flow
+(https://css-tricks.com/almanac/properties/f/flex-flow/)
+
+flex-grow
+https://css-tricks.com/almanac/properties/f/flex-grow/
+
+flex-shrink
+https://css-tricks.com/almanac/properties/f/flex-shrink/
+
+flex-wrap
+https://css-tricks.com/almanac/properties/f/flex-wrap/
+
+justify-content
+https://css-tricks.com/almanac/properties/j/justify-content/
+
+justify-self
+https://css-tricks.com/almanac/properties/j/justify-self/
+
+row-gap
+https://css-tricks.com/almanac/properties/g/gap/row-gap/
+
+## More Informtion
+- https://www.w3.org/TR/css-flexbox-1/
+- https://www.digitalocean.com/community/cheatsheets/css-flexbox?utm_medium=content_acq&utm_source=css-tricks&utm_campaign=&utm_content=awareness_bestsellers
+- https://www.digitalocean.com/community/tutorials/css-centering-using-flexbox?utm_medium=content_acq&utm_source=css-tricks&utm_campaign=&utm_content=awareness_bestsellers
+- https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+- https://www.smashingmagazine.com/2018/10/flexbox-use-cases/
 
